@@ -30,11 +30,11 @@ resetGame.addEventListener('click', init)
 function init() {
 	resetGame.setAttribute('hidden', '')
   boardState = [
-    [null, null, null, null, null, null, null]
-    [null, null, null, null, null, null, null]
-    [null, null, null, null, null, null, null]
-    [null, null, null, null, null, null, null]
-    [null, null, null, null, null, null, null]
+    [1, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null]
   ]
 
@@ -44,13 +44,26 @@ function init() {
 	cells.forEach((sec) => {
 		sec.innerHTML = ''
 	})
-  // render()
+  render()
 }
 
 function handleClick() {
   
 }
 
+function render() {
+  boardState.forEach(function (cell, idx) {
+    cell.forEach(function (element, indx) {
+      if (element ===1 ) {
+        cells[indx].style.backgroundColor = "blue"
+      }
+    })
+  })
+  
+}
+
 function winnerIsYou() {
 
 }
+
+init()
