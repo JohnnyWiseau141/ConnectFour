@@ -27,7 +27,7 @@ resetGame.addEventListener('click', init)
 
 function init() {
 	resetGame.setAttribute('hidden', '')
-  board = [
+  boardState = [
     [null, null, null, null, null, null, null]
     [null, null, null, null, null, null, null]
     [null, null, null, null, null, null, null]
@@ -43,4 +43,12 @@ function init() {
 		sec.innerHTML = ''
 	})
   // render()
+}
+
+function handleClick() {
+  
+}
+
+function winnerIsYou() {
+
 }
