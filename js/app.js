@@ -11,6 +11,7 @@ let boardState, playerTurn, isWinner
 
 //cached element references
 
+
 const cells = document.querySelectorAll('.cells')
 const msgToPlayer = document.querySelector('.message')
 const resetGame = document.querySelector('#resetButton')
@@ -30,12 +31,12 @@ resetGame.addEventListener('click', init)
 function init() {
 	resetGame.setAttribute('hidden', '')
   boardState = [
-    [1, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null]
+    [1, null, null, null, null, null, 1],
+    [null, 1, null, null, null, null, null],
+    [null, null, 1, null, null, null, null],
+    [null, null, null, 1, null, null, null],
+    [null, null, 1, null, 1, null, 1]
   ]
 
   cells.innerHTML = ''
@@ -52,9 +53,9 @@ function handleClick() {
 }
 
 function render() {
-  boardState.forEach(function (cell, idx) {
-    cell.forEach(function (element, indx) {
-      if (element ===1 ) {
+  boardState.forEach(function (array) {
+    array.forEach(function (element, indx) {
+      if (element === 1 ) {
         cells[indx].style.backgroundColor = "blue"
       }
     })
