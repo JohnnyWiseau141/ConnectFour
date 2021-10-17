@@ -53,10 +53,10 @@ function handleClick() {
 }
 
 function render() {
-  boardState.forEach(function (array) {
-    array.forEach(function (element, indx) {
+  boardState.forEach(function (array, row) {
+    array.forEach(function (element, column) {
       if (element === 1 ) {
-        cells[indx].style.backgroundColor = "blue"
+        cells[row * 7 + column].style.backgroundColor = "blue"
       }
     })
   })
