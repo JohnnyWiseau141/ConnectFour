@@ -22,6 +22,8 @@ const resetGame = document.querySelector('#resetButton')
 
 resetGame.addEventListener('click', init)
 
+// boardState.addEventListener('click', handleClick)
+
 
 //functions
 
