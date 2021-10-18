@@ -13,7 +13,7 @@ let boardState, playerTurn, isWinner
 
 
 const cells = document.querySelectorAll('.cells')
-const msgToPlayer = document.querySelector('.message')
+const msgToPlayer = document.querySelector('#message')
 const resetGame = document.querySelector('#resetButton')
 
 //event listeners
@@ -46,6 +46,7 @@ function init() {
   playerTurn = 1
 	cells.forEach((sec) => {
 		sec.innerHTML = ''
+    sec.style.backgroundColor = 'white'
 	})
   render()
 }
@@ -53,12 +54,25 @@ function init() {
 function handleClick(sqr) {
 	resetGame.removeAttribute('hidden')
 
-  
-  if (boardState[sqIdx] || isWinner) {
+  let sqIdx = sqr.target.id.replace('sq', '')
 
+    
+    
+    let rowIdx = parseInt(sqIdx[0])
+    let colIdx = parseInt(sqIdx[1])
+  
+  
+  if (boardState[rowIdx][colIdx] || isWinner) {
+    return
   }
 
-  
+  boardState[rowIdx][colIdx] = playerTurn
+
+  playerTurn *= -1
+
+  // isWinner = winnerIsYou()
+
+  render()
 
 } 
 
@@ -67,6 +81,8 @@ function render() {
     array.forEach(function (element, column) {
       if (element === 1 ) {
         cells[row * 7 + column].style.backgroundColor = "blue"
+      } else if (element === -1 ) {
+        cells[row * 7 + column].style.backgroundColor = "red"
       }
     })
   })
