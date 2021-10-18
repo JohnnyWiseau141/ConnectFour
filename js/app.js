@@ -7,6 +7,7 @@
 
 //variables
 
+//set's the variables for the state of the 2d array (boardState), the player's turn (playerTurn), and who is the winner (isWinner)
 let boardState, playerTurn, isWinner
 
 //cached element references
@@ -37,11 +38,10 @@ function init() {
     [null, null, null, null, null, null, null], // [3]
     [null, null, null, null, null, null, null], // [4]
     [null, null, null, null, null, null, null]  // [5]
-
 //  [0],   [1],   [2],  [3],  [4],  [5],  [6]
   ]
 
-  cells.innerHTML = ''
+  
   isWinner = false
   playerTurn = 1
 	cells.forEach((sec) => {
@@ -50,6 +50,8 @@ function init() {
 	})
   render()
 }
+
+//what to do once handleClick is initiated
 
 function handleClick(sqr) {
 	resetGame.removeAttribute('hidden')
@@ -62,15 +64,34 @@ function handleClick(sqr) {
     let colIdx = parseInt(sqIdx[1])
   
   
-  if (boardState[rowIdx][colIdx] || isWinner) {
+  if (boardState[rowIdx][colIdx] || isWinner) 
+      {
     return
-  }
+    }
+
+  if (boardState[rowIdx+1][colIdx] === null) {
+    rowIdx = rowIdx + 1
+  } 
+
+  
+
+
+  // attempted for loop
+  // for ( i=0; i>5; i++ ) {
+  //   rowIdx = rowIdx+1
+  // }
+
+  
+
+
 
   boardState[rowIdx][colIdx] = playerTurn
 
   playerTurn *= -1
 
   // isWinner = winnerIsYou()
+
+
 
   render()
 
