@@ -53,10 +53,10 @@ function init() {
 
 //what to do once handleClick is initiated
 
-function handleClick(sqr) {
+function handleClick(cir) {
 	resetGame.removeAttribute('hidden')
 
-  let sqIdx = sqr.target.id.replace('sq', '')
+  let sqIdx = cir.target.id.replace('sq', '')
 
     
     
@@ -69,17 +69,18 @@ function handleClick(sqr) {
     return
     }
 
+    
+ 
+
   if (boardState[rowIdx+1][colIdx] === null) {
     rowIdx = rowIdx + 1
   } 
 
+
+  
+ 
   
 
-
-  // attempted for loop
-  // for ( i=0; i>5; i++ ) {
-  //   rowIdx = rowIdx+1
-  // }
 
   
 
