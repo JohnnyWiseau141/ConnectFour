@@ -69,29 +69,22 @@ function handleClick(cir) {
     return
     }
 
-    
- 
 
   if (boardState[rowIdx+1][colIdx] === null) {
     rowIdx = rowIdx + 1
-  } 
-
+  }  
+  // else if (rowIdx === undefined) {
+  //   rowIdx = 5
+  // }
 
   
  
-  
-
-
-  
-
-
 
   boardState[rowIdx][colIdx] = playerTurn
 
   playerTurn *= -1
 
   // isWinner = winnerIsYou()
-
 
 
   render()
