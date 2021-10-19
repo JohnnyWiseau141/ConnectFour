@@ -78,11 +78,11 @@ function handleClick(cir) {
     return
   } else if (boardState[1][colIdx] !=null) {
     boardState[0][colIdx] = playerTurn
-  }else if (boardState[2][colIdx] !=null) {
-  boardState[1][colIdx] = playerTurn
-  }else if (boardState[3][colIdx] != null) {
+  } else if (boardState[2][colIdx] !=null) {
+    boardState[1][colIdx] = playerTurn
+  } else if (boardState[3][colIdx] != null) {
     boardState[2][colIdx] = playerTurn
-  }else if (boardState[4][colIdx] != null) {
+  } else if (boardState[4][colIdx] != null) {
     boardState[3][colIdx] = playerTurn
   } else if (boardState[5][colIdx] != null) {
     boardState[4][colIdx] = playerTurn
@@ -99,7 +99,7 @@ function handleClick(cir) {
 
   playerTurn *= -1
 
-  // isWinner = winnerIsYou()
+  isWinner = winnerIsYou()
 
 
   render()
@@ -136,6 +136,74 @@ function render() {
 
 function winnerIsYou() {
 
+  //winning combos by row
+
+	if(Math.abs(boardState[0][0] + boardState[0][1] + boardState[0][2] + boardState[0][3])=== 4)return boardState[0][0]
+	if(Math.abs(boardState[0][1] + boardState[0][2] + boardState[0][3] + boardState[0][4])=== 4)return boardState[0][1]
+  if(Math.abs(boardState[0][2] + boardState[0][3] + boardState[0][4] + boardState[0][5])=== 4)return boardState[0][2]
+	if(Math.abs(boardState[0][3] + boardState[0][4] + boardState[0][5] + boardState[0][6])=== 4)return boardState[0][3]
+
+  if(Math.abs(boardState[1][0] + boardState[1][1] + boardState[1][2] + boardState[1][3])=== 4)return boardState[1][0]
+  if(Math.abs(boardState[1][1] + boardState[1][2] + boardState[1][3] + boardState[1][4])=== 4)return boardState[1][1]
+  if(Math.abs(boardState[1][2] + boardState[1][3] + boardState[1][4] + boardState[1][5])=== 4)return boardState[1][2]
+  if(Math.abs(boardState[1][3] + boardState[1][4] + boardState[1][5] + boardState[1][6])=== 4)return boardState[1][3]
+
+  if(Math.abs(boardState[2][0] + boardState[2][1] + boardState[2][2] + boardState[2][3])=== 4)return boardState[2][0]
+  if(Math.abs(boardState[2][1] + boardState[2][2] + boardState[2][3] + boardState[2][4])=== 4)return boardState[2][1]
+  if(Math.abs(boardState[2][2] + boardState[2][3] + boardState[2][4] + boardState[2][5])=== 4)return boardState[2][2]
+	if(Math.abs(boardState[2][3] + boardState[2][4] + boardState[2][5] + boardState[2][6])=== 4)return boardState[2][3]
+
+  if(Math.abs(boardState[3][0] + boardState[3][1] + boardState[3][2] + boardState[3][3])=== 4)return boardState[3][0]
+  if(Math.abs(boardState[3][1] + boardState[3][2] + boardState[3][3] + boardState[3][4])=== 4)return boardState[3][1]
+  if(Math.abs(boardState[3][2] + boardState[3][3] + boardState[3][4] + boardState[3][5])=== 4)return boardState[3][2]
+	if(Math.abs(boardState[3][3] + boardState[3][4] + boardState[3][5] + boardState[3][6])=== 4)return boardState[3][3]
+
+  if(Math.abs(boardState[4][0] + boardState[4][1] + boardState[4][2] + boardState[4][3])=== 4)return boardState[4][0]
+  if(Math.abs(boardState[4][1] + boardState[4][2] + boardState[4][3] + boardState[4][4])=== 4)return boardState[4][1]
+  if(Math.abs(boardState[4][2] + boardState[4][3] + boardState[4][4] + boardState[4][5])=== 4)return boardState[4][2]
+	if(Math.abs(boardState[4][3] + boardState[4][4] + boardState[4][5] + boardState[4][6])=== 4)return boardState[4][3]
+
+  if(Math.abs(boardState[5][0] + boardState[5][1] + boardState[5][2] + boardState[5][3])=== 4)return boardState[5][0]
+  if(Math.abs(boardState[5][1] + boardState[5][2] + boardState[5][3] + boardState[5][4])=== 4)return boardState[5][1]
+  if(Math.abs(boardState[5][2] + boardState[5][3] + boardState[5][4] + boardState[5][5])=== 4)return boardState[5][2]
+	if(Math.abs(boardState[5][3] + boardState[5][4] + boardState[5][5] + boardState[5][6])=== 4)return boardState[5][3]
+
+  //winning combos by column
+
+  if(Math.abs(boardState[0][0] + boardState[1][0] + boardState[2][0] + boardState[3][0])=== 4)return boardState[0][0]
+  if(Math.abs(boardState[1][0] + boardState[2][0] + boardState[3][0] + boardState[4][0])=== 4)return boardState[1][0]
+  if(Math.abs(boardState[2][0] + boardState[3][0] + boardState[4][0] + boardState[5][0])=== 4)return boardState[2][0]
+
+  if(Math.abs(boardState[0][1] + boardState[1][1] + boardState[2][1] + boardState[3][1])=== 4)return boardState[0][1]
+  if(Math.abs(boardState[1][1] + boardState[2][1] + boardState[3][1] + boardState[4][1])=== 4)return boardState[1][1]
+  if(Math.abs(boardState[2][1] + boardState[3][1] + boardState[4][1] + boardState[5][1])=== 4)return boardState[2][1]
+
+  if(Math.abs(boardState[0][2] + boardState[1][2] + boardState[2][2] + boardState[3][2])=== 4)return boardState[0][2]
+  if(Math.abs(boardState[1][2] + boardState[2][2] + boardState[3][2] + boardState[4][2])=== 4)return boardState[1][2]
+  if(Math.abs(boardState[2][2] + boardState[3][2] + boardState[4][2] + boardState[5][2])=== 4)return boardState[2][2]
+
+  if(Math.abs(boardState[0][3] + boardState[1][3] + boardState[2][3] + boardState[3][3])=== 4)return boardState[0][3]
+  if(Math.abs(boardState[1][3] + boardState[2][3] + boardState[3][3] + boardState[4][3])=== 4)return boardState[1][3]
+  if(Math.abs(boardState[2][3] + boardState[3][3] + boardState[4][3] + boardState[5][3])=== 4)return boardState[2][3]
+
+  if(Math.abs(boardState[0][4] + boardState[1][4] + boardState[2][4] + boardState[3][4])=== 4)return boardState[0][4]
+  if(Math.abs(boardState[1][4] + boardState[2][4] + boardState[3][4] + boardState[4][4])=== 4)return boardState[1][4]
+  if(Math.abs(boardState[2][4] + boardState[3][4] + boardState[4][4] + boardState[5][4])=== 4)return boardState[2][4]
+
+  if(Math.abs(boardState[0][5] + boardState[1][5] + boardState[2][5] + boardState[3][5])=== 4)return boardState[0][5]
+  if(Math.abs(boardState[1][5] + boardState[2][5] + boardState[3][5] + boardState[4][5])=== 4)return boardState[1][5]
+  if(Math.abs(boardState[2][5] + boardState[3][5] + boardState[4][5] + boardState[5][5])=== 4)return boardState[2][5]
+
+  if(Math.abs(boardState[0][6] + boardState[1][6] + boardState[2][6] + boardState[3][6])=== 4)return boardState[0][6]
+  if(Math.abs(boardState[1][6] + boardState[2][6] + boardState[3][6] + boardState[4][6])=== 4)return boardState[1][6]
+  if(Math.abs(boardState[2][6] + boardState[3][6] + boardState[4][6] + boardState[5][6])=== 4)return boardState[2][6]
+
+  if (boardState.some(row => row.includes(null))) {
+   return null
+} 
+  else {
+  	return 'T'
+}
 }
 
 init()
