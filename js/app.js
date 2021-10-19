@@ -64,20 +64,23 @@ function handleClick(cir) {
     let colIdx = parseInt(sqIdx[1])
   
   
-  // if (boardState[rowIdx][colIdx] || isWinner) 
-  //     {
-  //   return
-  //   }
+  if (boardState[rowIdx][colIdx] || isWinner) 
+      {
+    return
+    }
 
 
     
 
-  // if (boardState[rowIdx+1][colIdx] === null) {
-  //   rowIdx = rowIdx + 1
-  // }  
-if boardState[2][colIdx]
 
-  if (boardState[3][colIdx] != null) {
+
+  if (boardState[0][colIdx] != null) {
+    return
+  } else if (boardState[1][colIdx] !=null) {
+    boardState[0][colIdx] = playerTurn
+  }else if (boardState[2][colIdx] !=null) {
+  boardState[1][colIdx] = playerTurn
+  }else if (boardState[3][colIdx] != null) {
     boardState[2][colIdx] = playerTurn
   }else if (boardState[4][colIdx] != null) {
     boardState[3][colIdx] = playerTurn
@@ -89,9 +92,7 @@ if boardState[2][colIdx]
 
   
 
-// if (boardState[5][colIdx] === null ) {
-//   boardState[5][colIdx] = playerTurn
-// }
+
 
   
 
