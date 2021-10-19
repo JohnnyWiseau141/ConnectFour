@@ -64,23 +64,37 @@ function handleClick(cir) {
     let colIdx = parseInt(sqIdx[1])
   
   
-  if (boardState[rowIdx][colIdx] || isWinner) 
-      {
-    return
-    }
+  // if (boardState[rowIdx][colIdx] || isWinner) 
+  //     {
+  //   return
+  //   }
 
 
-  if (boardState[rowIdx+1][colIdx] === null) {
-    rowIdx = rowIdx + 1
-  }  
-  // else if (rowIdx === undefined) {
-  //   rowIdx = 5
-  // }
+    
+
+  // if (boardState[rowIdx+1][colIdx] === null) {
+  //   rowIdx = rowIdx + 1
+  // }  
+if boardState[2][colIdx]
+
+  if (boardState[3][colIdx] != null) {
+    boardState[2][colIdx] = playerTurn
+  }else if (boardState[4][colIdx] != null) {
+    boardState[3][colIdx] = playerTurn
+  } else if (boardState[5][colIdx] != null) {
+    boardState[4][colIdx] = playerTurn
+  } else {
+    boardState[5][colIdx] = playerTurn
+  }
 
   
- 
 
-  boardState[rowIdx][colIdx] = playerTurn
+// if (boardState[5][colIdx] === null ) {
+//   boardState[5][colIdx] = playerTurn
+// }
+
+  
+
 
   playerTurn *= -1
 
