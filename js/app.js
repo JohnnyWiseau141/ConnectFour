@@ -17,6 +17,50 @@ const cells = document.querySelectorAll('.cells')
 const msgToPlayer = document.querySelector('#message')
 const resetGame = document.querySelector('#resetButton')
 
+let zeroZero = document.querySelector('#sq00')
+let zeroOne = document.querySelector('#sq01')
+let zeroTwo = document.querySelector('#sq02')
+let zeroThree = document.querySelector('#sq03')
+let zeroFour = document.querySelector('#sq04')
+let zeroFive = document.querySelector('#sq05')
+let zeroSix = document.querySelector('#sq06')
+// let zeroSeven = document.querySelector('#sq10')
+// let zeroOne = document.querySelector('#sq11')
+// let zeroOne = document.querySelector('#sq12')
+// let zeroOne = document.querySelector('#sq13')
+// let zeroOne = document.querySelector('#sq14')
+// let zeroOne = document.querySelector('#sq15')
+// let zeroOne = document.querySelector('#sq16')
+// let zeroOne = document.querySelector('#sq20')
+// let zeroOne = document.querySelector('#sq21')
+// let zeroOne = document.querySelector('#sq22')
+// let zeroOne = document.querySelector('#sq23')
+// let zeroOne = document.querySelector('#sq24')
+// let zeroOne = document.querySelector('#sq25')
+// let zeroOne = document.querySelector('#sq26')
+// let zeroOne = document.querySelector('#sq30')
+// let zeroZero = document.querySelector('#sq31')
+// let zeroOne = document.querySelector('#sq32')
+// let zeroOne = document.querySelector('#sq33')
+// let zeroOne = document.querySelector('#sq34')
+// let zeroOne = document.querySelector('#sq35')
+// let zeroOne = document.querySelector('#sq36')
+// let zeroOne = document.querySelector('#sq40')
+// let zeroOne = document.querySelector('#sq41')
+// let zeroOne = document.querySelector('#sq42')
+// let zeroOne = document.querySelector('#sq43')
+// let zeroOne = document.querySelector('#sq44')
+// let zeroOne = document.querySelector('#sq45')
+// let zeroOne = document.querySelector('#sq46')
+// let zeroOne = document.querySelector('#sq50')
+// let zeroOne = document.querySelector('#sq51')
+// let zeroOne = document.querySelector('#sq52')
+// let zeroOne = document.querySelector('#sq53')
+// let zeroOne = document.querySelector('#sq54')
+// let zeroOne = document.querySelector('#sq55')
+// let zeroOne = document.querySelector('#sq56')
+
+
 //event listeners
 cells.forEach((sec) => {
   sec.addEventListener('click', handleClick)
@@ -134,7 +178,11 @@ function winnerIsYou() {
 
   //winning combos by row
 
-	if(Math.abs(boardState[0][0] + boardState[0][1] + boardState[0][2] + boardState[0][3])=== 4)return boardState[0][0]
+	if(Math.abs(boardState[0][0] + boardState[0][1] + boardState[0][2] + boardState[0][3])=== 4){
+    zeroZero.style.borderColor = 'yellow'
+    return boardState[0][0]
+  }
+
 	if(Math.abs(boardState[0][1] + boardState[0][2] + boardState[0][3] + boardState[0][4])=== 4)return boardState[0][1]
   if(Math.abs(boardState[0][2] + boardState[0][3] + boardState[0][4] + boardState[0][5])=== 4)return boardState[0][2]
 	if(Math.abs(boardState[0][3] + boardState[0][4] + boardState[0][5] + boardState[0][6])=== 4)return boardState[0][3]
