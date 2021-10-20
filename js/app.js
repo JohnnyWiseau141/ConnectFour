@@ -71,12 +71,13 @@ resetGame.addEventListener('click', init)
 function init() {
 	resetGame.setAttribute('hidden', '')
   boardState = [
+    //0,0  0,1   0,2    0,3   0,4   0,5   0,6
     [null, null, null, null, null, null, null], // [0]
     [null, null, null, null, null, null, null], // [1]
-    [null, null, null, null, null, null, null], // [2]
+    [1, null, null, null, null, null, null], // [2]
     [null, null, null, null, null, null, null], // [3]
     [null, null, null, null, null, null, null], // [4]
-    [null, null, null, null, null, null, null]  // [5]
+    [null, null, null, null, null, null, 1]  // [5]
 //  [0],   [1],   [2],  [3],  [4],  [5],  [6]
   ]
   
@@ -216,76 +217,337 @@ function winnerIsYou() {
     return boardState[1][0]
   }
 
+  if(Math.abs(boardState[1][1] + boardState[1][2] + boardState[1][3] + boardState[1][4])=== 4){
+    oneOne.style.borderColor = 'yellow'
+    oneTwo.style.borderColor = 'yellow'
+    oneThree.style.borderColor = 'yellow'
+    oneFour.style.borderColor = 'yellow'
+    return boardState[1][1]
+  }
 
-  if(Math.abs(boardState[1][1] + boardState[1][2] + boardState[1][3] + boardState[1][4])=== 4)return boardState[1][1]
+  if(Math.abs(boardState[1][2] + boardState[1][3] + boardState[1][4] + boardState[1][5])=== 4){
+    oneTwo.style.borderColor = 'yellow'
+    oneThree.style.borderColor = 'yellow'
+    oneFour.style.borderColor = 'yellow'
+    oneFive.style.borderColor = 'yellow'
+    return boardState[1][2]
+  }
 
-
-  if(Math.abs(boardState[1][2] + boardState[1][3] + boardState[1][4] + boardState[1][5])=== 4)return boardState[1][2]
-  if(Math.abs(boardState[1][3] + boardState[1][4] + boardState[1][5] + boardState[1][6])=== 4)return boardState[1][3]
+  if(Math.abs(boardState[1][3] + boardState[1][4] + boardState[1][5] + boardState[1][6])=== 4){
+    oneThree.style.borderColor = 'yellow'
+    oneFour.style.borderColor = 'yellow'
+    oneFive.style.borderColor = 'yellow'
+    oneSix.style.borderColor = 'yellow'
+    return boardState[1][3]
+  }
 
   //winning combos in row 2
-  if(Math.abs(boardState[2][0] + boardState[2][1] + boardState[2][2] + boardState[2][3])=== 4)return boardState[2][0]
-  if(Math.abs(boardState[2][1] + boardState[2][2] + boardState[2][3] + boardState[2][4])=== 4)return boardState[2][1]
-  if(Math.abs(boardState[2][2] + boardState[2][3] + boardState[2][4] + boardState[2][5])=== 4)return boardState[2][2]
-	if(Math.abs(boardState[2][3] + boardState[2][4] + boardState[2][5] + boardState[2][6])=== 4)return boardState[2][3]
+  if(Math.abs(boardState[2][0] + boardState[2][1] + boardState[2][2] + boardState[2][3])=== 4){
+    twoZero.style.borderColor = 'yellow'
+    twoOne.style.borderColor = 'yellow'
+    twoTwo.style.borderColor = 'yellow'
+    twoThree.style.borderColor = 'yellow'
+    return boardState[2][0]
+  }
 
+  if(Math.abs(boardState[2][1] + boardState[2][2] + boardState[2][3] + boardState[2][4])=== 4){
+    twoOne.style.borderColor = 'yellow'
+    twoTwo.style.borderColor = 'yellow'
+    twoThree.style.borderColor = 'yellow'
+    twoFour.style.borderColor = 'yellow'
+    return boardState[2][1]
+  }
+
+  if(Math.abs(boardState[2][2] + boardState[2][3] + boardState[2][4] + boardState[2][5])=== 4){
+    twoTwo.style.borderColor = 'yellow'
+    twoThree.style.borderColor = 'yellow'
+    twoFour.style.borderColor = 'yellow'
+    twoFive.style.borderColor = 'yellow'
+    return boardState[2][2]
+  }
+
+	if(Math.abs(boardState[2][3] + boardState[2][4] + boardState[2][5] + boardState[2][6])=== 4){
+    twoThree.style.borderColor = 'yellow'
+    twoFour.style.borderColor = 'yellow'
+    twoFive.style.borderColor = 'yellow' 
+    twoSix.style.borderColor = 'yellow' 
+    return boardState[2][3]
+  }
 
 //winning combos in row 3
-  if(Math.abs(boardState[3][0] + boardState[3][1] + boardState[3][2] + boardState[3][3])=== 4)return boardState[3][0]
-  if(Math.abs(boardState[3][1] + boardState[3][2] + boardState[3][3] + boardState[3][4])=== 4)return boardState[3][1]
-  if(Math.abs(boardState[3][2] + boardState[3][3] + boardState[3][4] + boardState[3][5])=== 4)return boardState[3][2]
-	if(Math.abs(boardState[3][3] + boardState[3][4] + boardState[3][5] + boardState[3][6])=== 4)return boardState[3][3]
+  if(Math.abs(boardState[3][0] + boardState[3][1] + boardState[3][2] + boardState[3][3])=== 4){
+    threeZero.style.borderColor = 'yellow'
+    threeOne.style.borderColor = 'yellow'
+    threeTwo.style.borderColor = 'yellow' 
+    threeThree.style.borderColor = 'yellow'  
+    return boardState[3][0]
+  }
+  
+  if(Math.abs(boardState[3][1] + boardState[3][2] + boardState[3][3] + boardState[3][4])=== 4){
+    threeOne.style.borderColor = 'yellow'
+    threeTwo.style.borderColor = 'yellow' 
+    threeThree.style.borderColor = 'yellow' 
+    threeFour.style.borderColor = 'yellow' 
+    return boardState[3][1]
+  }
+
+  if(Math.abs(boardState[3][2] + boardState[3][3] + boardState[3][4] + boardState[3][5])=== 4){
+    threeTwo.style.borderColor = 'yellow' 
+    threeThree.style.borderColor = 'yellow' 
+    threeFour.style.borderColor = 'yellow'
+    threeFive.style.borderColor = 'yellow'
+    return boardState[3][2]
+  }
+
+	if(Math.abs(boardState[3][3] + boardState[3][4] + boardState[3][5] + boardState[3][6])=== 4){
+    threeThree.style.borderColor = 'yellow' 
+    threeFour.style.borderColor = 'yellow'
+    threeFive.style.borderColor = 'yellow'
+    threeSix.style.borderColor = 'yellow'
+    return boardState[3][3]
+  }
 
 
   //winning combos in row 4
-  if(Math.abs(boardState[4][0] + boardState[4][1] + boardState[4][2] + boardState[4][3])=== 4)return boardState[4][0]
-  if(Math.abs(boardState[4][1] + boardState[4][2] + boardState[4][3] + boardState[4][4])=== 4)return boardState[4][1]
-  if(Math.abs(boardState[4][2] + boardState[4][3] + boardState[4][4] + boardState[4][5])=== 4)return boardState[4][2]
-	if(Math.abs(boardState[4][3] + boardState[4][4] + boardState[4][5] + boardState[4][6])=== 4)return boardState[4][3]
+  if(Math.abs(boardState[4][0] + boardState[4][1] + boardState[4][2] + boardState[4][3])=== 4){
+    fourZero.style.borderColor = 'yellow' 
+    fourOne.style.borderColor = 'yellow'
+    fourTwo.style.borderColor = 'yellow'
+    fourThree.style.borderColor = 'yellow'
+    return boardState[4][0]
+  }
+  if(Math.abs(boardState[4][1] + boardState[4][2] + boardState[4][3] + boardState[4][4])=== 4){
+    fourOne.style.borderColor = 'yellow'
+    fourTwo.style.borderColor = 'yellow'
+    fourThree.style.borderColor = 'yellow'
+    fourFour.style.borderColor = 'yellow'
+    return boardState[4][1]
+  }
+  if(Math.abs(boardState[4][2] + boardState[4][3] + boardState[4][4] + boardState[4][5])=== 4){
+    fourTwo.style.borderColor = 'yellow'
+    fourThree.style.borderColor = 'yellow'
+    fourFour.style.borderColor = 'yellow'
+    fourFive.style.borderColor = 'yellow'
+    return boardState[4][2]
+  }
+
+	if(Math.abs(boardState[4][3] + boardState[4][4] + boardState[4][5] + boardState[4][6])=== 4){
+    fourThree.style.borderColor = 'yellow'
+    fourFour.style.borderColor = 'yellow'
+    fourFive.style.borderColor = 'yellow'
+    fourSix.style.borderColor = 'yellow'
+    return boardState[4][3]
+  }
 
   //winning combos in row 5
-  if(Math.abs(boardState[5][0] + boardState[5][1] + boardState[5][2] + boardState[5][3])=== 4)return boardState[5][0]
-  if(Math.abs(boardState[5][1] + boardState[5][2] + boardState[5][3] + boardState[5][4])=== 4)return boardState[5][1]
-  if(Math.abs(boardState[5][2] + boardState[5][3] + boardState[5][4] + boardState[5][5])=== 4)return boardState[5][2]
-	if(Math.abs(boardState[5][3] + boardState[5][4] + boardState[5][5] + boardState[5][6])=== 4)return boardState[5][3]
+  if(Math.abs(boardState[5][0] + boardState[5][1] + boardState[5][2] + boardState[5][3])=== 4){
+    fiveZero.style.borderColor = 'yellow'
+    fiveOne.style.borderColor = 'yellow'
+    fiveTwo.style.borderColor = 'yellow'
+    fiveThree.style.borderColor = 'yellow'
+    return boardState[5][0]
+  }
 
+  if(Math.abs(boardState[5][1] + boardState[5][2] + boardState[5][3] + boardState[5][4])=== 4){
+    fiveOne.style.borderColor = 'yellow'
+    fiveTwo.style.borderColor = 'yellow'
+    fiveThree.style.borderColor = 'yellow'
+    fiveFour.style.borderColor = 'yellow'
+    return boardState[5][1]
+  }
+
+  if(Math.abs(boardState[5][2] + boardState[5][3] + boardState[5][4] + boardState[5][5])=== 4){
+    fiveTwo.style.borderColor = 'yellow'
+    fiveThree.style.borderColor = 'yellow'
+    fiveFour.style.borderColor = 'yellow'
+    fiveFive.style.borderColor = 'yellow'
+    return boardState[5][2]
+  }
+
+	if(Math.abs(boardState[5][3] + boardState[5][4] + boardState[5][5] + boardState[5][6])=== 4){
+    fiveThree.style.borderColor = 'yellow'
+    fiveFour.style.borderColor = 'yellow'
+    fiveFive.style.borderColor = 'yellow'
+    fiveSix.style.borderColor = 'yellow'
+    return boardState[5][3]
+  }
 
 
   // -------- winning combos by column
 
   //winning combos in column 0
-  if(Math.abs(boardState[0][0] + boardState[1][0] + boardState[2][0] + boardState[3][0])=== 4)return boardState[0][0]
-  if(Math.abs(boardState[1][0] + boardState[2][0] + boardState[3][0] + boardState[4][0])=== 4)return boardState[1][0]
-  if(Math.abs(boardState[2][0] + boardState[3][0] + boardState[4][0] + boardState[5][0])=== 4)return boardState[2][0]
+  if(Math.abs(boardState[0][0] + boardState[1][0] + boardState[2][0] + boardState[3][0])=== 4){
+    zeroZero.style.borderColor = 'yellow'
+    oneZero.style.borderColor = 'yellow'
+    twoZero.style.borderColor = 'yellow'
+    threeZero.style.borderColor = 'yellow'
+    return boardState[0][0]
+  }
+
+  if(Math.abs(boardState[1][0] + boardState[2][0] + boardState[3][0] + boardState[4][0])=== 4){
+    oneZero.style.borderColor = 'yellow'
+    twoZero.style.borderColor = 'yellow'
+    threeZero.style.borderColor = 'yellow'
+    fourZero.style.borderColor = 'yellow'
+    return boardState[1][0]
+  }
+
+  if(Math.abs(boardState[2][0] + boardState[3][0] + boardState[4][0] + boardState[5][0])=== 4){
+    twoZero.style.borderColor = 'yellow'
+    threeZero.style.borderColor = 'yellow'
+    fourZero.style.borderColor = 'yellow'
+    fiveZero.style.borderColor = 'yellow'
+    return boardState[2][0]
+  }
+
 
 //wnning combos in column 1
-  if(Math.abs(boardState[0][1] + boardState[1][1] + boardState[2][1] + boardState[3][1])=== 4)return boardState[0][1]
-  if(Math.abs(boardState[1][1] + boardState[2][1] + boardState[3][1] + boardState[4][1])=== 4)return boardState[1][1]
-  if(Math.abs(boardState[2][1] + boardState[3][1] + boardState[4][1] + boardState[5][1])=== 4)return boardState[2][1]
+
+  if(Math.abs(boardState[0][1] + boardState[1][1] + boardState[2][1] + boardState[3][1])=== 4){
+    zeroOne.style.borderColor = 'yellow'
+    oneOne.style.borderColor = 'yellow'
+    twoOne.style.borderColor = 'yellow'
+    threeOne.style.borderColor = 'yellow'
+    return boardState[0][1]
+  }
+
+  if(Math.abs(boardState[1][1] + boardState[2][1] + boardState[3][1] + boardState[4][1])=== 4){
+    oneOne.style.borderColor = 'yellow'
+    twoOne.style.borderColor = 'yellow'
+    threeOne.style.borderColor = 'yellow'
+    fourOne.style.borderColor = 'yellow'
+    return boardState[1][1]
+  }
+
+  if(Math.abs(boardState[2][1] + boardState[3][1] + boardState[4][1] + boardState[5][1])=== 4){
+    twoOne.style.borderColor = 'yellow'
+    threeOne.style.borderColor = 'yellow'
+    fourOne.style.borderColor = 'yellow'
+    fiveOne.style.borderColor = 'yellow'
+    return boardState[2][1]
+  }
+
 
 //winning combos in column 2
-  if(Math.abs(boardState[0][2] + boardState[1][2] + boardState[2][2] + boardState[3][2])=== 4)return boardState[0][2]
-  if(Math.abs(boardState[1][2] + boardState[2][2] + boardState[3][2] + boardState[4][2])=== 4)return boardState[1][2]
-  if(Math.abs(boardState[2][2] + boardState[3][2] + boardState[4][2] + boardState[5][2])=== 4)return boardState[2][2]
+  if(Math.abs(boardState[0][2] + boardState[1][2] + boardState[2][2] + boardState[3][2])=== 4){
+    zeroTwo.style.borderColor = 'yellow'
+    oneTwo.style.borderColor = 'yellow'
+    twoTwo.style.borderColor = 'yellow'
+    threeTwo.style.borderColor = 'yellow'
+    return boardState[0][2]
+  }
+
+  if(Math.abs(boardState[1][2] + boardState[2][2] + boardState[3][2] + boardState[4][2])=== 4){
+    oneTwo.style.borderColor = 'yellow'
+    twoTwo.style.borderColor = 'yellow'
+    threeTwo.style.borderColor = 'yellow'
+    fourTwo.style.borderColor = 'yellow'
+    return boardState[1][2]
+  }
+
+  if(Math.abs(boardState[2][2] + boardState[3][2] + boardState[4][2] + boardState[5][2])=== 4){
+    twoTwo.style.borderColor = 'yellow'
+    threeTwo.style.borderColor = 'yellow'
+    fourTwo.style.borderColor = 'yellow'
+    fiveTwo.style.borderColor = 'yellow'
+    return boardState[2][2]
+  }
+
 
 //winning combos in column 3
-  if(Math.abs(boardState[0][3] + boardState[1][3] + boardState[2][3] + boardState[3][3])=== 4)return boardState[0][3]
-  if(Math.abs(boardState[1][3] + boardState[2][3] + boardState[3][3] + boardState[4][3])=== 4)return boardState[1][3]
-  if(Math.abs(boardState[2][3] + boardState[3][3] + boardState[4][3] + boardState[5][3])=== 4)return boardState[2][3]
+  if(Math.abs(boardState[0][3] + boardState[1][3] + boardState[2][3] + boardState[3][3])=== 4){
+    zeroThree.style.borderColor = 'yellow'
+    oneThree.style.borderColor = 'yellow'
+    twoThree.style.borderColor = 'yellow'
+    threeThree.style.borderColor = 'yellow'
+    return boardState[0][3]
+  }
 
+  if(Math.abs(boardState[1][3] + boardState[2][3] + boardState[3][3] + boardState[4][3])=== 4){
+    oneThree.style.borderColor = 'yellow'
+    twoThree.style.borderColor = 'yellow'
+    threeThree.style.borderColor = 'yellow'
+    fourThree.style.borderColor = 'yellow'
+    return boardState[1][3]
+  }
+
+  if(Math.abs(boardState[2][3] + boardState[3][3] + boardState[4][3] + boardState[5][3])=== 4){
+    twoThree.style.borderColor = 'yellow'
+    threeThree.style.borderColor = 'yellow'
+    fourThree.style.borderColor = 'yellow'
+    fiveThree.style.borderColor = 'yellow'
+    return boardState[2][3]
+  }
+
+  
 // winning combos in column 4
-  if(Math.abs(boardState[0][4] + boardState[1][4] + boardState[2][4] + boardState[3][4])=== 4)return boardState[0][4]
-  if(Math.abs(boardState[1][4] + boardState[2][4] + boardState[3][4] + boardState[4][4])=== 4)return boardState[1][4]
-  if(Math.abs(boardState[2][4] + boardState[3][4] + boardState[4][4] + boardState[5][4])=== 4)return boardState[2][4]
+  if(Math.abs(boardState[0][4] + boardState[1][4] + boardState[2][4] + boardState[3][4])=== 4){
+    zeroFour.style.borderColor = 'yellow'
+    oneFour.style.borderColor = 'yellow'
+    twoFour.style.borderColor = 'yellow'
+    threeFour.style.borderColor = 'yellow'
+    return boardState[0][4]
+  }
+
+  if(Math.abs(boardState[1][4] + boardState[2][4] + boardState[3][4] + boardState[4][4])=== 4){
+    oneFour.style.borderColor = 'yellow'
+    twoFour.style.borderColor = 'yellow'
+    threeFour.style.borderColor = 'yellow'
+    fourFour.style.borderColor = 'yellow'
+    return boardState[1][4]
+  }
+
+  if(Math.abs(boardState[2][4] + boardState[3][4] + boardState[4][4] + boardState[5][4])=== 4){
+    twoFour.style.borderColor = 'yellow'
+    threeFour.style.borderColor = 'yellow'
+    fourFour.style.borderColor = 'yellow'
+    fiveFour.style.borderColor = 'yellow'
+    return boardState[2][4]
+  }
 
 //winning combos in column 5
-  if(Math.abs(boardState[0][5] + boardState[1][5] + boardState[2][5] + boardState[3][5])=== 4)return boardState[0][5]
-  if(Math.abs(boardState[1][5] + boardState[2][5] + boardState[3][5] + boardState[4][5])=== 4)return boardState[1][5]
-  if(Math.abs(boardState[2][5] + boardState[3][5] + boardState[4][5] + boardState[5][5])=== 4)return boardState[2][5]
+
+  if(Math.abs(boardState[0][5] + boardState[1][5] + boardState[2][5] + boardState[3][5])=== 4){
+    zeroFive.style.borderColor = 'yellow'
+    oneFive.style.borderColor = 'yellow'
+    twoFive.style.borderColor = 'yellow'
+    threeFive.style.borderColor = 'yellow'
+    return boardState[0][5]
+  }
+
+  if(Math.abs(boardState[1][5] + boardState[2][5] + boardState[3][5] + boardState[4][5])=== 4){
+    oneFive.style.borderColor = 'yellow'
+    twoFive.style.borderColor = 'yellow'
+    threeFive.style.borderColor = 'yellow'
+    fourFive.style.borderColor = 'yellow'
+    return boardState[1][5]
+  }
+
+  if(Math.abs(boardState[2][5] + boardState[3][5] + boardState[4][5] + boardState[5][5])=== 4){
+    twoFive.style.borderColor = 'yellow'
+    threeFive.style.borderColor = 'yellow'
+    fourFive.style.borderColor = 'yellow'
+    fiveFive.style.borderColor = 'yellow'
+    return boardState[2][5]
+  }
+
 
 // winning combos on column 6
-  if(Math.abs(boardState[0][6] + boardState[1][6] + boardState[2][6] + boardState[3][6])=== 4)return boardState[0][6]
-  if(Math.abs(boardState[1][6] + boardState[2][6] + boardState[3][6] + boardState[4][6])=== 4)return boardState[1][6]
+  if(Math.abs(boardState[0][6] + boardState[1][6] + boardState[2][6] + boardState[3][6])=== 4){
+    zeroSix.style.borderColor = 'yellow'
+    oneSix.style.borderColor = 'yellow'
+    twoSix.style.borderColor = 'yellow'
+    threeSix.style.borderColor = 'yellow'
+    return boardState[0][6]
+  }
+
+  if(Math.abs(boardState[1][6] + boardState[2][6] + boardState[3][6] + boardState[4][6])=== 4){
+    oneSix.style.borderColor = 'yellow'
+    twoSix.style.borderColor = 'yellow'
+    threeSix.style.borderColor = 'yellow'
+    fourSix.style.borderColor = 'yellow'
+    return boardState[1][6]
+  }
   if(Math.abs(boardState[2][6] + boardState[3][6] + boardState[4][6] + boardState[5][6])=== 4){
     twoSix.style.borderColor = 'yellow'
     threeSix.style.borderColor = 'yellow'
@@ -299,38 +561,173 @@ function winnerIsYou() {
   // -------! winning combos diagnonally 
 
   //--- winning combos across row 0 - row 3 in the backward slash direction:  \ \ \ \
-  if(Math.abs(boardState[0][0] + boardState[1][1] + boardState[2][2] + boardState[3][3])=== 4)return boardState[0][0]
-	if(Math.abs(boardState[0][1] + boardState[1][2] + boardState[2][3] + boardState[3][4])=== 4)return boardState[0][1]
-  if(Math.abs(boardState[0][2] + boardState[1][3] + boardState[2][4] + boardState[3][5])=== 4)return boardState[0][2]
-	if(Math.abs(boardState[0][3] + boardState[1][4] + boardState[2][5] + boardState[3][6])=== 4)return boardState[0][3]
+  if(Math.abs(boardState[0][0] + boardState[1][1] + boardState[2][2] + boardState[3][3])=== 4){
+    zeroZero.style.borderColor = 'yellow'
+    oneOne.style.borderColor = 'yellow'
+    twoTwo.style.borderColor = 'yellow'
+    threeThree.style.borderColor = 'yellow'
+    return boardState[0][0]
+  }
+
+	if(Math.abs(boardState[0][1] + boardState[1][2] + boardState[2][3] + boardState[3][4])=== 4){
+    zeroOne.style.borderColor = 'yellow'
+    oneTwo.style.borderColor = 'yellow'
+    twoThree.style.borderColor = 'yellow'
+    threeFour.style.borderColor = 'yellow'
+    return boardState[0][1]
+  }
+
+  if(Math.abs(boardState[0][2] + boardState[1][3] + boardState[2][4] + boardState[3][5])=== 4){
+    zeroTwo.style.borderColor = 'yellow'
+    oneThree.style.borderColor = 'yellow'
+    twoFour.style.borderColor = 'yellow'
+    threeFive.style.borderColor = 'yellow'
+    return boardState[0][2]
+  }
+
+	if(Math.abs(boardState[0][3] + boardState[1][4] + boardState[2][5] + boardState[3][6])=== 4){
+    zeroThree.style.borderColor = 'yellow'
+    oneFour.style.borderColor = 'yellow'
+    twoFive.style.borderColor = 'yellow'
+    threeSix.style.borderColor = 'yellow'
+    return boardState[0][3]
+  }
 
 // -- winning combos across row 0 - row 3 in the forward slash direction: / / / /
-  if(Math.abs(boardState[0][6] + boardState[1][5] + boardState[2][4] + boardState[3][3])=== 4)return boardState[0][6]
-	if(Math.abs(boardState[0][5] + boardState[1][4] + boardState[2][3] + boardState[3][2])=== 4)return boardState[0][5]
-  if(Math.abs(boardState[0][4] + boardState[1][3] + boardState[2][2] + boardState[3][1])=== 4)return boardState[0][4]
-	if(Math.abs(boardState[0][3] + boardState[1][2] + boardState[2][1] + boardState[3][0])=== 4)return boardState[0][3]
+  if(Math.abs(boardState[0][6] + boardState[1][5] + boardState[2][4] + boardState[3][3])=== 4){
+    zeroSix.style.borderColor = 'yellow'
+    oneFive.style.borderColor = 'yellow'
+    twoFour.style.borderColor = 'yellow'
+    threeThree.style.borderColor = 'yellow'
+    return boardState[0][6]
+  }
+
+	if(Math.abs(boardState[0][5] + boardState[1][4] + boardState[2][3] + boardState[3][2])=== 4){
+    zeroFive.style.borderColor = 'yellow'
+    oneFour.style.borderColor = 'yellow'
+    twoThree.style.borderColor = 'yellow'
+    threeTwo.style.borderColor = 'yellow'
+    return boardState[0][5]
+  }
+  
+  if(Math.abs(boardState[0][4] + boardState[1][3] + boardState[2][2] + boardState[3][1])=== 4){
+    zeroFour.style.borderColor = 'yellow'
+    oneThree.style.borderColor = 'yellow'
+    twoTwo.style.borderColor = 'yellow'
+    threeOne.style.borderColor = 'yellow'
+    return boardState[0][4]
+  }
+
+	if(Math.abs(boardState[0][3] + boardState[1][2] + boardState[2][1] + boardState[3][0])=== 4){
+    zeroThree.style.borderColor = 'yellow'
+    oneTwo.style.borderColor = 'yellow'
+    twoOne.style.borderColor = 'yellow'
+    threeZero.style.borderColor = 'yellow'
+    return boardState[0][3]
+  }
 
   // --- winning combos across row 1 - row 4 in the backward slash diretion: \ \ \ \
-  if(Math.abs(boardState[1][0] + boardState[2][1] + boardState[3][2] + boardState[4][3])=== 4)return boardState[1][0]
-	if(Math.abs(boardState[1][1] + boardState[2][2] + boardState[3][3] + boardState[4][4])=== 4)return boardState[1][1]
-  if(Math.abs(boardState[1][2] + boardState[2][3] + boardState[3][4] + boardState[4][5])=== 4)return boardState[1][2]
-	if(Math.abs(boardState[1][3] + boardState[2][4] + boardState[3][5] + boardState[4][6])=== 4)return boardState[1][3]
+  if(Math.abs(boardState[1][0] + boardState[2][1] + boardState[3][2] + boardState[4][3])=== 4){
+    oneZero.style.borderColor = 'yellow'
+    twoOne.style.borderColor = 'yellow'
+    threeTwo.style.borderColor = 'yellow'
+    fourThree.style.borderColor = 'yellow'
+    return boardState[1][0]
+  }
+
+	if(Math.abs(boardState[1][1] + boardState[2][2] + boardState[3][3] + boardState[4][4])=== 4){
+    oneOne.style.borderColor = 'yellow'
+    twoTwo.style.borderColor = 'yellow'
+    threeThree.style.borderColor = 'yellow'
+    fourFour.style.borderColor = 'yellow'
+    return boardState[1][1]
+  }
+
+  if(Math.abs(boardState[1][2] + boardState[2][3] + boardState[3][4] + boardState[4][5])=== 4){
+    oneTwo.style.borderColor = 'yellow'
+    twoThree.style.borderColor = 'yellow'
+    threeFour.style.borderColor = 'yellow'
+    fourFive.style.borderColor = 'yellow'
+    return boardState[1][2]
+  }
+
+	if(Math.abs(boardState[1][3] + boardState[2][4] + boardState[3][5] + boardState[4][6])=== 4){
+    oneThree.style.borderColor = 'yellow'
+    twoFour.style.borderColor = 'yellow'
+    threeFive.style.borderColor = 'yellow'
+    fourSix.style.borderColor = 'yellow'
+    return boardState[1][3]
+  }
 
   // winning combos across row 1 - row 4 in the forward slash direction / / / /
 
-  if(Math.abs(boardState[1][6] + boardState[2][5] + boardState[3][4] + boardState[4][3])=== 4)return boardState[1][6]
-	if(Math.abs(boardState[1][5] + boardState[2][4] + boardState[3][3] + boardState[4][2])=== 4)return boardState[1][5]
-  if(Math.abs(boardState[1][4] + boardState[2][3] + boardState[3][2] + boardState[4][1])=== 4)return boardState[1][4]
-	if(Math.abs(boardState[1][3] + boardState[2][2] + boardState[3][1] + boardState[4][0])=== 4)return boardState[1][3]
+  if(Math.abs(boardState[1][6] + boardState[2][5] + boardState[3][4] + boardState[4][3])=== 4){
+    oneSix.style.borderColor = 'yellow'
+    twoFive.style.borderColor = 'yellow'
+    threeFour.style.borderColor = 'yellow'
+    fourThree.style.borderColor = 'yellow'
+    return boardState[1][6]
+  }
+
+	if(Math.abs(boardState[1][5] + boardState[2][4] + boardState[3][3] + boardState[4][2])=== 4){
+    oneFive.style.borderColor = 'yellow'
+    twoFour.style.borderColor = 'yellow'
+    threeThree.style.borderColor = 'yellow'
+    fourTwo.style.borderColor = 'yellow'
+    return boardState[1][5]
+  }
+
+  if(Math.abs(boardState[1][4] + boardState[2][3] + boardState[3][2] + boardState[4][1])=== 4){
+    oneFour.style.borderColor = 'yellow'
+    twoThree.style.borderColor = 'yellow'
+    threeTwo.style.borderColor = 'yellow'
+    fourOne.style.borderColor = 'yellow'
+    return boardState[1][4]
+  }
+
+	if(Math.abs(boardState[1][3] + boardState[2][2] + boardState[3][1] + boardState[4][0])=== 4){
+    oneThree.style.borderColor = 'yellow'
+    twoTwo.style.borderColor = 'yellow'
+    threeOne.style.borderColor = 'yellow'
+    fourZero.style.borderColor = 'yellow'
+    return boardState[1][3]
+  }
 
 
 // winning combos across row 2 - row 5 in the forward slash direction -- / / / /
-  if(Math.abs(boardState[2][3] + boardState[3][2] + boardState[4][1] + boardState[5][0])=== 4)return boardState[2][3]
-	if(Math.abs(boardState[2][6] + boardState[3][5] + boardState[4][4] + boardState[5][3])=== 4)return boardState[2][6]
-  if(Math.abs(boardState[2][4] + boardState[3][3] + boardState[4][2] + boardState[5][1])=== 4)return boardState[2][4]
-	if(Math.abs(boardState[2][5] + boardState[3][4] + boardState[4][3] + boardState[5][2])=== 4)return boardState[2][5]
+  if(Math.abs(boardState[2][3] + boardState[3][2] + boardState[4][1] + boardState[5][0])=== 4){
+    twoThree.style.borderColor = 'yellow'
+    threeTwo.style.borderColor = 'yellow'
+    fourOne.style.borderColor = 'yellow'
+    fiveZero.style.borderColor = 'yellow'
+    return boardState[2][3]
+  }
 
-//backward slash direction winning combos
+	if(Math.abs(boardState[2][6] + boardState[3][5] + boardState[4][4] + boardState[5][3])=== 4){
+    twoSix.style.borderColor = 'yellow'
+    threeFive.style.borderColor = 'yellow'
+    fourFour.style.borderColor = 'yellow'
+    fiveThree.style.borderColor = 'yellow'
+    return boardState[2][6]
+  }
+
+  if(Math.abs(boardState[2][4] + boardState[3][3] + boardState[4][2] + boardState[5][1])=== 4){
+    twoFour.style.borderColor = 'yellow'
+    threeThree.style.borderColor = 'yellow'
+    fourTwo.style.borderColor = 'yellow'
+    fiveOne.style.borderColor = 'yellow'
+    return boardState[2][4]
+  }
+
+	if(Math.abs(boardState[2][5] + boardState[3][4] + boardState[4][3] + boardState[5][2])=== 4){
+    twoFive.style.borderColor = 'yellow'
+    threeFour.style.borderColor = 'yellow'
+    fourThree.style.borderColor = 'yellow'
+    fiveTwo.style.borderColor = 'yellow'
+    return boardState[2][5]
+  }
+
+// winning combos from row 2 - row 5 in the backward slash direction \ \ \ \
   if(Math.abs(boardState[2][0] + boardState[3][1] + boardState[4][2] + boardState[5][3])=== 4)return boardState[2][0]
 	if(Math.abs(boardState[2][1] + boardState[3][2] + boardState[4][3] + boardState[5][4])=== 4)return boardState[2][1]
   if(Math.abs(boardState[2][2] + boardState[3][3] + boardState[4][4] + boardState[5][5])=== 4)return boardState[2][2]
