@@ -41,7 +41,7 @@ function init() {
 //  [0],   [1],   [2],  [3],  [4],  [5],  [6]
   ]
 
-  
+  msgToPlayer.style.color = 'black'
   isWinner = false
   playerTurn = 1
 	cells.forEach((sec) => {
@@ -111,6 +111,7 @@ function render() {
   })
   if (!isWinner ) {
     if (playerTurn === 1) {
+      
     msgToPlayer.innerText = 'Blue Player go!'
     }else{
     msgToPlayer.innerText = 'Red player go!'
@@ -119,8 +120,10 @@ function render() {
     msgToPlayer.innerText = 'Tie game!'
   } else {
     if (isWinner === 1){
+      msgToPlayer.style.color = 'blue'
       msgToPlayer.innerText = 'Blue player wins!'
     } else {
+      msgToPlayer.style.color = 'red'
       msgToPlayer.innerText = 'Red player wins!'
     }
 		
@@ -233,3 +236,4 @@ function winnerIsYou() {
 }
 
 init()
+
