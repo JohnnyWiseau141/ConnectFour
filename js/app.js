@@ -1,9 +1,7 @@
 //constants
-
-// const winConditions = [
-//   'a lot of stuff'
-// ]
-
+const cells = document.querySelectorAll('.cells')
+const msgToPlayer = document.querySelector('#message')
+const resetGame = document.querySelector('#resetButton')
 
 //variables
 
@@ -13,9 +11,7 @@ let boardState, playerTurn, isWinner
 //cached element references
 
 
-const cells = document.querySelectorAll('.cells')
-const msgToPlayer = document.querySelector('#message')
-const resetGame = document.querySelector('#resetButton')
+
 
 let zeroZero = document.querySelector('#sq00')
 let zeroOne = document.querySelector('#sq01')
@@ -68,7 +64,6 @@ cells.forEach((sec) => {
 
 resetGame.addEventListener('click', init)
 
-// boardState.addEventListener('click', handleClick)
 
 
 //functions
@@ -177,16 +172,18 @@ function render() {
 
 function winnerIsYou() {
 
-  //winning combos by row
+  // -------- winning combos by row
+
+  //winning combos in row 0
 
 	if(Math.abs(boardState[0][0] + boardState[0][1] + boardState[0][2] + boardState[0][3])=== 4){
+    //change in border color to indicate winning combo position
     zeroZero.style.borderColor = 'yellow'
     zeroOne.style.borderColor = 'yellow'
     zeroTwo.style.borderColor = 'yellow'
     zeroThree.style.borderColor = 'yellow'
     return boardState[0][0]
   }
-
 	if(Math.abs(boardState[0][1] + boardState[0][2] + boardState[0][3] + boardState[0][4])=== 4){
     zeroOne.style.borderColor = 'yellow'
     zeroTwo.style.borderColor = 'yellow'
@@ -194,91 +191,147 @@ function winnerIsYou() {
     zeroFour.style.borderColor = 'yellow'
     return boardState[0][1]
   }
-  if(Math.abs(boardState[0][2] + boardState[0][3] + boardState[0][4] + boardState[0][5])=== 4)return boardState[0][2]
-	if(Math.abs(boardState[0][3] + boardState[0][4] + boardState[0][5] + boardState[0][6])=== 4)return boardState[0][3]
+  if(Math.abs(boardState[0][2] + boardState[0][3] + boardState[0][4] + boardState[0][5])=== 4){
+    zeroTwo.style.borderColor = 'yellow'
+    zeroThree.style.borderColor = 'yellow'
+    zeroFour.style.borderColor = 'yellow'
+    zeroFive.style.borderColor = 'yellow'
+    return boardState[0][2]
+  }
 
-  if(Math.abs(boardState[1][0] + boardState[1][1] + boardState[1][2] + boardState[1][3])=== 4)return boardState[1][0]
+	if(Math.abs(boardState[0][3] + boardState[0][4] + boardState[0][5] + boardState[0][6])=== 4){
+    zeroThree.style.borderColor = 'yellow'
+    zeroFour.style.borderColor = 'yellow'
+    zeroFive.style.borderColor = 'yellow'
+    zeroSix.style.borderColor = 'yellow'
+    return boardState[0][3]
+  }
+
+  //winning combos in row 1
+
+  if(Math.abs(boardState[1][0] + boardState[1][1] + boardState[1][2] + boardState[1][3])=== 4){
+    oneZero.style.borderColor = 'yellow'
+    oneOne.style.borderColor = 'yellow'
+    oneTwo.style.borderColor = 'yellow'
+    oneThree.style.borderColor = 'yellow'
+    return boardState[1][0]
+  }
+
+
   if(Math.abs(boardState[1][1] + boardState[1][2] + boardState[1][3] + boardState[1][4])=== 4)return boardState[1][1]
+
+
   if(Math.abs(boardState[1][2] + boardState[1][3] + boardState[1][4] + boardState[1][5])=== 4)return boardState[1][2]
   if(Math.abs(boardState[1][3] + boardState[1][4] + boardState[1][5] + boardState[1][6])=== 4)return boardState[1][3]
 
+  //winning combos in row 2
   if(Math.abs(boardState[2][0] + boardState[2][1] + boardState[2][2] + boardState[2][3])=== 4)return boardState[2][0]
   if(Math.abs(boardState[2][1] + boardState[2][2] + boardState[2][3] + boardState[2][4])=== 4)return boardState[2][1]
   if(Math.abs(boardState[2][2] + boardState[2][3] + boardState[2][4] + boardState[2][5])=== 4)return boardState[2][2]
 	if(Math.abs(boardState[2][3] + boardState[2][4] + boardState[2][5] + boardState[2][6])=== 4)return boardState[2][3]
 
+
+//winning combos in row 3
   if(Math.abs(boardState[3][0] + boardState[3][1] + boardState[3][2] + boardState[3][3])=== 4)return boardState[3][0]
   if(Math.abs(boardState[3][1] + boardState[3][2] + boardState[3][3] + boardState[3][4])=== 4)return boardState[3][1]
   if(Math.abs(boardState[3][2] + boardState[3][3] + boardState[3][4] + boardState[3][5])=== 4)return boardState[3][2]
 	if(Math.abs(boardState[3][3] + boardState[3][4] + boardState[3][5] + boardState[3][6])=== 4)return boardState[3][3]
 
+
+  //winning combos in row 4
   if(Math.abs(boardState[4][0] + boardState[4][1] + boardState[4][2] + boardState[4][3])=== 4)return boardState[4][0]
   if(Math.abs(boardState[4][1] + boardState[4][2] + boardState[4][3] + boardState[4][4])=== 4)return boardState[4][1]
   if(Math.abs(boardState[4][2] + boardState[4][3] + boardState[4][4] + boardState[4][5])=== 4)return boardState[4][2]
 	if(Math.abs(boardState[4][3] + boardState[4][4] + boardState[4][5] + boardState[4][6])=== 4)return boardState[4][3]
 
+  //winning combos in row 5
   if(Math.abs(boardState[5][0] + boardState[5][1] + boardState[5][2] + boardState[5][3])=== 4)return boardState[5][0]
   if(Math.abs(boardState[5][1] + boardState[5][2] + boardState[5][3] + boardState[5][4])=== 4)return boardState[5][1]
   if(Math.abs(boardState[5][2] + boardState[5][3] + boardState[5][4] + boardState[5][5])=== 4)return boardState[5][2]
 	if(Math.abs(boardState[5][3] + boardState[5][4] + boardState[5][5] + boardState[5][6])=== 4)return boardState[5][3]
 
-  //winning combos by column
 
+
+  // -------- winning combos by column
+
+  //winning combos in column 0
   if(Math.abs(boardState[0][0] + boardState[1][0] + boardState[2][0] + boardState[3][0])=== 4)return boardState[0][0]
   if(Math.abs(boardState[1][0] + boardState[2][0] + boardState[3][0] + boardState[4][0])=== 4)return boardState[1][0]
   if(Math.abs(boardState[2][0] + boardState[3][0] + boardState[4][0] + boardState[5][0])=== 4)return boardState[2][0]
 
+//wnning combos in column 1
   if(Math.abs(boardState[0][1] + boardState[1][1] + boardState[2][1] + boardState[3][1])=== 4)return boardState[0][1]
   if(Math.abs(boardState[1][1] + boardState[2][1] + boardState[3][1] + boardState[4][1])=== 4)return boardState[1][1]
   if(Math.abs(boardState[2][1] + boardState[3][1] + boardState[4][1] + boardState[5][1])=== 4)return boardState[2][1]
 
+//winning combos in column 2
   if(Math.abs(boardState[0][2] + boardState[1][2] + boardState[2][2] + boardState[3][2])=== 4)return boardState[0][2]
   if(Math.abs(boardState[1][2] + boardState[2][2] + boardState[3][2] + boardState[4][2])=== 4)return boardState[1][2]
   if(Math.abs(boardState[2][2] + boardState[3][2] + boardState[4][2] + boardState[5][2])=== 4)return boardState[2][2]
 
+//winning combos in column 3
   if(Math.abs(boardState[0][3] + boardState[1][3] + boardState[2][3] + boardState[3][3])=== 4)return boardState[0][3]
   if(Math.abs(boardState[1][3] + boardState[2][3] + boardState[3][3] + boardState[4][3])=== 4)return boardState[1][3]
   if(Math.abs(boardState[2][3] + boardState[3][3] + boardState[4][3] + boardState[5][3])=== 4)return boardState[2][3]
 
+// winning combos in column 4
   if(Math.abs(boardState[0][4] + boardState[1][4] + boardState[2][4] + boardState[3][4])=== 4)return boardState[0][4]
   if(Math.abs(boardState[1][4] + boardState[2][4] + boardState[3][4] + boardState[4][4])=== 4)return boardState[1][4]
   if(Math.abs(boardState[2][4] + boardState[3][4] + boardState[4][4] + boardState[5][4])=== 4)return boardState[2][4]
 
+//winning combos in column 5
   if(Math.abs(boardState[0][5] + boardState[1][5] + boardState[2][5] + boardState[3][5])=== 4)return boardState[0][5]
   if(Math.abs(boardState[1][5] + boardState[2][5] + boardState[3][5] + boardState[4][5])=== 4)return boardState[1][5]
   if(Math.abs(boardState[2][5] + boardState[3][5] + boardState[4][5] + boardState[5][5])=== 4)return boardState[2][5]
 
+// winning combos on column 6
   if(Math.abs(boardState[0][6] + boardState[1][6] + boardState[2][6] + boardState[3][6])=== 4)return boardState[0][6]
   if(Math.abs(boardState[1][6] + boardState[2][6] + boardState[3][6] + boardState[4][6])=== 4)return boardState[1][6]
-  if(Math.abs(boardState[2][6] + boardState[3][6] + boardState[4][6] + boardState[5][6])=== 4)return boardState[2][6]
+  if(Math.abs(boardState[2][6] + boardState[3][6] + boardState[4][6] + boardState[5][6])=== 4){
+    twoSix.style.borderColor = 'yellow'
+    threeSix.style.borderColor = 'yellow'
+    fourSix.style.borderColor = 'yellow'
+    fiveSix.style.borderColor = 'yellow'
+    return boardState[2][6]
+  }
 
-  // winning combos diagnonally 
 
+
+  // -------! winning combos diagnonally 
+
+  //--- winning combos across row 0 - row 3 in the backward slash direction:  \ \ \ \
   if(Math.abs(boardState[0][0] + boardState[1][1] + boardState[2][2] + boardState[3][3])=== 4)return boardState[0][0]
 	if(Math.abs(boardState[0][1] + boardState[1][2] + boardState[2][3] + boardState[3][4])=== 4)return boardState[0][1]
   if(Math.abs(boardState[0][2] + boardState[1][3] + boardState[2][4] + boardState[3][5])=== 4)return boardState[0][2]
 	if(Math.abs(boardState[0][3] + boardState[1][4] + boardState[2][5] + boardState[3][6])=== 4)return boardState[0][3]
 
+// -- winning combos across row 0 - row 3 in the forward slash direction: / / / /
   if(Math.abs(boardState[0][6] + boardState[1][5] + boardState[2][4] + boardState[3][3])=== 4)return boardState[0][6]
 	if(Math.abs(boardState[0][5] + boardState[1][4] + boardState[2][3] + boardState[3][2])=== 4)return boardState[0][5]
   if(Math.abs(boardState[0][4] + boardState[1][3] + boardState[2][2] + boardState[3][1])=== 4)return boardState[0][4]
 	if(Math.abs(boardState[0][3] + boardState[1][2] + boardState[2][1] + boardState[3][0])=== 4)return boardState[0][3]
 
+  // --- winning combos across row 1 - row 4 in the backward slash diretion: \ \ \ \
   if(Math.abs(boardState[1][0] + boardState[2][1] + boardState[3][2] + boardState[4][3])=== 4)return boardState[1][0]
 	if(Math.abs(boardState[1][1] + boardState[2][2] + boardState[3][3] + boardState[4][4])=== 4)return boardState[1][1]
   if(Math.abs(boardState[1][2] + boardState[2][3] + boardState[3][4] + boardState[4][5])=== 4)return boardState[1][2]
 	if(Math.abs(boardState[1][3] + boardState[2][4] + boardState[3][5] + boardState[4][6])=== 4)return boardState[1][3]
+
+  // winning combos across row 1 - row 4 in the forward slash direction / / / /
 
   if(Math.abs(boardState[1][6] + boardState[2][5] + boardState[3][4] + boardState[4][3])=== 4)return boardState[1][6]
 	if(Math.abs(boardState[1][5] + boardState[2][4] + boardState[3][3] + boardState[4][2])=== 4)return boardState[1][5]
   if(Math.abs(boardState[1][4] + boardState[2][3] + boardState[3][2] + boardState[4][1])=== 4)return boardState[1][4]
 	if(Math.abs(boardState[1][3] + boardState[2][2] + boardState[3][1] + boardState[4][0])=== 4)return boardState[1][3]
 
+
+// winning combos across row 2 - row 5 in the forward slash direction -- / / / /
   if(Math.abs(boardState[2][3] + boardState[3][2] + boardState[4][1] + boardState[5][0])=== 4)return boardState[2][3]
 	if(Math.abs(boardState[2][6] + boardState[3][5] + boardState[4][4] + boardState[5][3])=== 4)return boardState[2][6]
   if(Math.abs(boardState[2][4] + boardState[3][3] + boardState[4][2] + boardState[5][1])=== 4)return boardState[2][4]
 	if(Math.abs(boardState[2][5] + boardState[3][4] + boardState[4][3] + boardState[5][2])=== 4)return boardState[2][5]
 
+//backward slash direction winning combos
   if(Math.abs(boardState[2][0] + boardState[3][1] + boardState[4][2] + boardState[5][3])=== 4)return boardState[2][0]
 	if(Math.abs(boardState[2][1] + boardState[3][2] + boardState[4][3] + boardState[5][4])=== 4)return boardState[2][1]
   if(Math.abs(boardState[2][2] + boardState[3][3] + boardState[4][4] + boardState[5][5])=== 4)return boardState[2][2]
@@ -293,5 +346,7 @@ function winnerIsYou() {
 }
 }
 
+
+//initiated function upon starting the webpage
 init()
 
