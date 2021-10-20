@@ -70,8 +70,6 @@ function handleClick(cir) {
     }
 
 
-    
-
 
 
   if (boardState[0][colIdx] != null) {
@@ -91,11 +89,6 @@ function handleClick(cir) {
   }
 
   
-
-
-
-  
-
 
   playerTurn *= -1
 
@@ -232,10 +225,10 @@ function winnerIsYou() {
 
 
   if (boardState.some(row => row.includes(null))) {
-   return null
+    return null
 } 
   else {
-  	return 'T'
+    return 'T'
 }
 }
 
