@@ -63,7 +63,7 @@ cells.forEach((sec) => {
 })
 
 resetGame.addEventListener('click', init)
-
+resetGame.addEventListener('click', clearWinningCombo)
 
 
 //functions
@@ -86,7 +86,7 @@ function init() {
 	cells.forEach((sec) => {
 		sec.innerHTML = ''
     sec.style.backgroundColor = 'white'
-    sec.style.borderColor = 'black'
+    // sec.style.borderColor = 'black'
 	})
   render()
 }
@@ -338,14 +338,22 @@ function winnerIsYou() {
 	if(Math.abs(boardState[2][3] + boardState[3][4] + boardState[4][5] + boardState[5][6])=== 4)return boardState[2][3]
 
 
-  if (boardState.some(row => row.includes(null))) {
-    return null
-} 
-  else {
+  if (boardState.some(row => row.includes(null))) 
+    {
+return null
+  } 
+    else {
     return 'T'
-}
+    }
 }
 
+
+
+function clearWinningCombo() {
+  cells.forEach((sec) => {
+    sec.style.borderColor = 'black'
+  })
+}
 
 //initiated function upon starting the webpage
 init()
