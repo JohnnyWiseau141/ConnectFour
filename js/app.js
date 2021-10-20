@@ -74,10 +74,10 @@ function init() {
     //0,0  0,1   0,2    0,3   0,4   0,5   0,6
     [null, null, null, null, null, null, null], // [0]
     [null, null, null, null, null, null, null], // [1]
-    [1, null, null, null, null, null, null], // [2]
+    [null, null, null, null, null, null, null], // [2]
     [null, null, null, null, null, null, null], // [3]
     [null, null, null, null, null, null, null], // [4]
-    [null, null, null, null, null, null, 1]  // [5]
+    [null, null, null, null, null, null, null]  // [5]
 //  [0],   [1],   [2],  [3],  [4],  [5],  [6]
   ]
   
@@ -728,21 +728,46 @@ function winnerIsYou() {
   }
 
 // winning combos from row 2 - row 5 in the backward slash direction \ \ \ \
-  if(Math.abs(boardState[2][0] + boardState[3][1] + boardState[4][2] + boardState[5][3])=== 4)return boardState[2][0]
-	if(Math.abs(boardState[2][1] + boardState[3][2] + boardState[4][3] + boardState[5][4])=== 4)return boardState[2][1]
-  if(Math.abs(boardState[2][2] + boardState[3][3] + boardState[4][4] + boardState[5][5])=== 4)return boardState[2][2]
-	if(Math.abs(boardState[2][3] + boardState[3][4] + boardState[4][5] + boardState[5][6])=== 4)return boardState[2][3]
+  if(Math.abs(boardState[2][0] + boardState[3][1] + boardState[4][2] + boardState[5][3])=== 4){
+    twoZero.style.borderColor = 'yellow'
+    threeOne.style.borderColor = 'yellow'
+    fourTwo.style.borderColor = 'yellow'
+    fiveThree.style.borderColor = 'yellow'
+    return boardState[2][0]
+  }
+
+	if(Math.abs(boardState[2][1] + boardState[3][2] + boardState[4][3] + boardState[5][4])=== 4){
+    twoOne.style.borderColor = 'yellow'
+    threeTwo.style.borderColor = 'yellow'
+    fourThree.style.borderColor = 'yellow'
+    fiveFour.style.borderColor = 'yellow'
+    return boardState[2][1]
+  }
+
+  if(Math.abs(boardState[2][2] + boardState[3][3] + boardState[4][4] + boardState[5][5])=== 4){
+    twoTwo.style.borderColor = 'yellow'
+    threeThree.style.borderColor = 'yellow'
+    fourFour.style.borderColor = 'yellow'
+    fiveFive.style.borderColor = 'yellow'
+    return boardState[2][2]
+  }
+
+	if(Math.abs(boardState[2][3] + boardState[3][4] + boardState[4][5] + boardState[5][6])=== 4){
+    twoThree.style.borderColor = 'yellow'
+    threeFour.style.borderColor = 'yellow'
+    fourFive.style.borderColor = 'yellow'
+    fiveSix.style.borderColor = 'yellow'
+    return boardState[2][3]
+  }
 
 
   if (boardState.some(row => row.includes(null))) 
     {
 return null
-  } 
-    else {
+  } else {
     return 'T'
     }
 }
-
 
 
 
