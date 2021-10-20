@@ -186,7 +186,13 @@ function winnerIsYou() {
     return boardState[0][0]
   }
 
-	if(Math.abs(boardState[0][1] + boardState[0][2] + boardState[0][3] + boardState[0][4])=== 4)return boardState[0][1]
+	if(Math.abs(boardState[0][1] + boardState[0][2] + boardState[0][3] + boardState[0][4])=== 4){
+    zeroOne.style.borderColor = 'yellow'
+    zeroTwo.style.borderColor = 'yellow'
+    zeroThree.style.borderColor = 'yellow'
+    zeroFour.style.borderColor = 'yellow'
+    return boardState[0][1]
+  }
   if(Math.abs(boardState[0][2] + boardState[0][3] + boardState[0][4] + boardState[0][5])=== 4)return boardState[0][2]
 	if(Math.abs(boardState[0][3] + boardState[0][4] + boardState[0][5] + boardState[0][6])=== 4)return boardState[0][3]
 
