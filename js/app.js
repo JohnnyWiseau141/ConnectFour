@@ -1,16 +1,15 @@
-//constants
-const cells = document.querySelectorAll('.cells')
-const msgToPlayer = document.querySelector('#message')
-const resetGame = document.querySelector('#resetButton')
+
 
 //variables
 
 //set's the variables for the state of the 2d array (boardState), the player's turn (playerTurn), and who is the winner (isWinner)
 let boardState, playerTurn, isWinner
 
-//cached element references
+//constants and cached element references
 
-
+const cells = document.querySelectorAll('.cells')
+const msgToPlayer = document.querySelector('#message')
+const resetGame = document.querySelector('#resetButton')
 
 
 let zeroZero = document.querySelector('#sq00')
@@ -58,12 +57,13 @@ let fiveSix = document.querySelector('#sq56')
 
 
 //event listeners
+
 cells.forEach((sec) => {
   sec.addEventListener('click', handleClick)
+  
 })
 
 resetGame.addEventListener('click', init)
-resetGame.addEventListener('click', clearWinningCombo)
 
 
 //functions
@@ -84,9 +84,8 @@ function init() {
   isWinner = false
   playerTurn = 1
 	cells.forEach((sec) => {
-		sec.innerHTML = ''
-    sec.style.backgroundColor = 'white'
-    // sec.style.borderColor = 'black'
+		sec.style.backgroundColor = 'white'
+    sec.style.borderColor = 'black'
 	})
   render()
 }
@@ -349,11 +348,6 @@ return null
 
 
 
-function clearWinningCombo() {
-  cells.forEach((sec) => {
-    sec.style.borderColor = 'black'
-  })
-}
 
 //initiated function upon starting the webpage
 init()
