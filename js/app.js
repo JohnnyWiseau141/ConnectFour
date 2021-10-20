@@ -84,13 +84,14 @@ function init() {
     [null, null, null, null, null, null, null]  // [5]
 //  [0],   [1],   [2],  [3],  [4],  [5],  [6]
   ]
-
+  
   msgToPlayer.style.color = 'black'
   isWinner = false
   playerTurn = 1
 	cells.forEach((sec) => {
 		sec.innerHTML = ''
     sec.style.backgroundColor = 'white'
+    sec.style.borderColor = 'black'
 	})
   render()
 }
