@@ -9,12 +9,12 @@ The goal of this game is to get four adjacent colors in any direction. Keep in m
 
 ## Getting Started
 
-Click [here](https://johnnywiseau141.github.io/ConnectFour/) to start the game. You cannot choose or click occupied slots.
+Click [here](https://johnnywiseau141.github.io/ConnectFour/) to start the game. You cannot choose or click occupied slots. You must click an empty slot to drop a circle into a column.
 
 
 
 
-![wireframe](https://64.media.tumblr.com/1d2af7df65ef09a131944fccbaf02946/f0fd2e57ddcccff8-6a/s1280x1920/1da5f8c4563cfe6f9c078cd8e94dc47424dba37f.png)
+![wireframe](images/connect4wireframe.png)
 
 
 
