@@ -7,10 +7,18 @@ let boardState, playerTurn, isWinner
 
 //constants and cached element references
 
+const previewer = document.querySelectorAll('.preview')
 const cells = document.querySelectorAll('.cells')
 const msgToPlayer = document.querySelector('#message')
 const resetGame = document.querySelector('#resetButton')
 
+let cZero = document.querySelector('#c0')
+let cOne = document.querySelector('#c1')
+let cTwo = document.querySelector('#c2')
+let cThree = document.querySelector('#c3')
+let cFour = document.querySelector('#c4')
+let cFive = document.querySelector('#c5')
+let cSix = document.querySelector('#c6')
 
 let zeroZero = document.querySelector('#sq00')
 let zeroOne = document.querySelector('#sq01')
@@ -60,7 +68,7 @@ let fiveSix = document.querySelector('#sq56')
 
 cells.forEach((sec) => {
   sec.addEventListener('click', handleClick)
-  
+  sec.addEventListener('mouseover', handleHover)
 })
 
 resetGame.addEventListener('click', init)
@@ -70,6 +78,11 @@ resetGame.addEventListener('click', init)
 
 function init() {
 	resetGame.setAttribute('hidden', '')
+
+  previewer.forEach((c) => {
+    c.style.backgroundColor = ''
+  })
+
   boardState = [
     //0,0  0,1   0,2    0,3   0,4   0,5   0,6
     [null, null, null, null, null, null, null], // [0]
@@ -98,20 +111,13 @@ function handleClick(cir) {
 	resetGame.removeAttribute('hidden')
 
   let sqIdx = cir.target.id.replace('sq', '')
-
-    
-    
     let rowIdx = parseInt(sqIdx[0])
     let colIdx = parseInt(sqIdx[1])
-  
   
   if (boardState[rowIdx][colIdx] || isWinner) 
       {
     return
     }
-
-
-
 
   if (boardState[0][colIdx] != null) {
     return
@@ -129,15 +135,19 @@ function handleClick(cir) {
     boardState[5][colIdx] = playerTurn
   }
 
-  
-
   playerTurn *= -1
 
   isWinner = winnerIsYou()
 
-
+  if (isWinner != null) {
+    previewer.forEach((c) => {
+      c.style.backgroundColor = ''
+    })
+  }
+  
+  handleHover(cir)
+  
   render()
-
 } 
 
 function render() {
@@ -162,7 +172,6 @@ function render() {
   } else {
     if (isWinner === 1){
       msgToPlayer.style.color = 'blue'
-      msgToPlayer.style.backgroundImage = ''
       msgToPlayer.innerText = 'Blue player wins!'
       msgToPlayer.style.borderColor = 'blue'
     } else {
@@ -771,9 +780,36 @@ return null
   } else {
     return 'T'
     }
+
+    
 }
 
+function handleHover(cir) {
+  if (isWinner){
+    return
+  }
+  let sqIdx = cir.target.id.replace('sq', '')
+    let rowIdx = parseInt(sqIdx[0])
+    let colIdx = parseInt(sqIdx[1])
 
+    if (boardState[rowIdx][colIdx]) 
+      {
+    return
+    }
+
+    previewer.forEach(preview => {
+      const pColIdx = parseInt(preview.id.replace('c', ''))
+      if (pColIdx === colIdx && playerTurn === 1) {
+        preview.style.backgroundColor = 'blue'
+      } else if (pColIdx === colIdx && playerTurn === -1) {
+        preview.style.backgroundColor = 'red'
+      } 
+      else {
+        preview.style.backgroundColor = ''
+      }
+    })
+  
+}
 
 //initiated function upon starting the webpage
 init()

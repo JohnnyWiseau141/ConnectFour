@@ -13,6 +13,8 @@ align-items: center;
 text-align: center;
 }
 
+
+
 section.board {
 display: grid;
 grid-template-rows: repeat(6, 10vmin);
@@ -23,7 +25,7 @@ border-radius: 10px;
 background-image: linear-gradient(to right, rgb(153, 147, 156), rgb(68, 68, 68));
 }
 
-div {
+div.cells {
 border: 10px solid  black;
 border-radius: 50px;
 font-size: 8vmin;
@@ -31,6 +33,23 @@ text-align: center;
 vertical-align: middle;
 align-items: center;
 }   
+
+section.preview-choice {
+  display: grid;
+  grid-template-rows: repeat(1, 10vmin);
+  grid-template-columns: repeat(7, 10vmin);
+  grid-gap: 0vmin;
+  
+  }
+  
+  div.preview {
+    border: transparent;
+    border-radius: 50px;
+    font-size: 8vmin;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+  }   
 
 h2 {
   font-size: 35px;
