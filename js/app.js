@@ -81,12 +81,13 @@ function init() {
 //  [0],   [1],   [2],  [3],  [4],  [5],  [6]
   ]
   
+  msgToPlayer.style.borderColor = 'black'
   msgToPlayer.style.color = 'black'
   isWinner = false
   playerTurn = 1
 	cells.forEach((sec) => {
 		sec.style.backgroundColor = 'white'
-    sec.style.borderColor = 'black'
+    sec.style.borderColor = ''
 	})
   render()
 }
@@ -161,10 +162,13 @@ function render() {
   } else {
     if (isWinner === 1){
       msgToPlayer.style.color = 'blue'
+      msgToPlayer.style.backgroundImage = ''
       msgToPlayer.innerText = 'Blue player wins!'
+      msgToPlayer.style.borderColor = 'blue'
     } else {
       msgToPlayer.style.color = 'red'
       msgToPlayer.innerText = 'Red player wins!'
+      msgToPlayer.style.borderColor = 'red'
     }
 		
   }
