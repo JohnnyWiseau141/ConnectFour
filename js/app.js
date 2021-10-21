@@ -320,7 +320,6 @@ function winnerIsYou() {
     return boardState[3][3]
   }
 
-
   //winning combos in row 4
   if(Math.abs(boardState[4][0] + boardState[4][1] + boardState[4][2] + boardState[4][3])=== 4){
     fourZero.style.borderColor = 'yellow' 
