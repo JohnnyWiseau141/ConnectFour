@@ -7,11 +7,16 @@ let boardState, playerTurn, isWinner
 
 //constants and cached element references
 
+// previewer references the invisible divs above the board
 const previewer = document.querySelectorAll('.preview')
+// cells references the divs of the board
 const cells = document.querySelectorAll('.cells')
+// announcement message indicating who's turn it is, or win condition announcement
 const msgToPlayer = document.querySelector('#message')
+// reset button
 const resetGame = document.querySelector('#resetButton')
 
+// individual invisible divs above the board for previewing which column the circle will be placed in
 let cZero = document.querySelector('#c0')
 let cOne = document.querySelector('#c1')
 let cTwo = document.querySelector('#c2')
@@ -20,6 +25,7 @@ let cFour = document.querySelector('#c4')
 let cFive = document.querySelector('#c5')
 let cSix = document.querySelector('#c6')
 
+ // divs of the actual board itself
 let zeroZero = document.querySelector('#sq00')
 let zeroOne = document.querySelector('#sq01')
 let zeroTwo = document.querySelector('#sq02')
@@ -66,16 +72,21 @@ let fiveSix = document.querySelector('#sq56')
 
 //event listeners
 
+ // need to run forEach to put event listeners on each cells. Uses both click and hover to use each respective function 
+
 cells.forEach((sec) => {
   sec.addEventListener('click', handleClick)
   sec.addEventListener('mouseover', handleHover)
 })
+
+//event listener for the reset button for running the initialization function when clicking reset 
 
 resetGame.addEventListener('click', init)
 
 
 //functions
 
+//initiation function to start the game or reset it
 function init() {
 	resetGame.setAttribute('hidden', '')
 
@@ -105,7 +116,7 @@ function init() {
   render()
 }
 
-//what to do once handleClick is initiated
+// the handleClick function, which invokes the handleHover and render functions
 
 function handleClick(cir) {
 	resetGame.removeAttribute('hidden')
@@ -150,6 +161,8 @@ function handleClick(cir) {
   render()
 } 
 
+// render function to change color of each cell and change the announcement message
+
 function render() {
   boardState.forEach(function (array, row) {
     array.forEach(function (element, column) {
@@ -183,12 +196,12 @@ function render() {
   }
 }
 
+// winnerIsYou function checks every single possible win condition
 function winnerIsYou() {
 
   // -------- winning combos by row
 
   //winning combos in row 0
-
 	if(Math.abs(boardState[0][0] + boardState[0][1] + boardState[0][2] + boardState[0][3])=== 4){
     //change in border color to indicate winning combo position
     zeroZero.style.borderColor = 'yellow'
@@ -781,6 +794,8 @@ return null
     }
 }
 
+// handleHover function to indicate which column the circle will be dropped in
+
 function handleHover(cir) {
   if (isWinner){
     return
@@ -799,10 +814,9 @@ function handleHover(cir) {
       const pColIdx = parseInt(preview.id.replace('c', ''))
       if (pColIdx === colIdx && playerTurn === 1) {
         preview.style.backgroundColor = 'blue'
-      } else if (pColIdx === colIdx && playerTurn === -1) {
+      } else if (pColIdx === colIdx && playerTurn ===-1){
         preview.style.backgroundColor = 'red'
-      } 
-      else {
+      } else {
         preview.style.backgroundColor = ''
       }
     })

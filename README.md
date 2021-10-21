@@ -30,3 +30,4 @@ Click [here](https://connect-four-con-lt-dr.surge.sh/) to start the game. You ca
 ## Future changes
 
 - Make a shorter and less tedious winnerIsYou function
+- Experiment more with styling
