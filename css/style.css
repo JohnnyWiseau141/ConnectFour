@@ -19,6 +19,7 @@ grid-template-rows: repeat(6, 10vmin);
 grid-template-columns: repeat(7, 10vmin);
 grid-gap: 0vmin;
 background: black;
+border: 3px solid black;
 border-radius: 10px;
 background-image: linear-gradient(to right, rgb(153, 147, 156), rgb(68, 68, 68));
 }
@@ -47,8 +48,28 @@ div.preview {
   text-align: center;
   vertical-align: middle;
   align-items: center;
-}   
+}
 
+  section.stand {
+  display: grid;
+  grid-template-rows: repeat(1, 10vmin);
+  grid-template-columns: repeat(3, 20vmin);
+  grid-gap: 5vmin;
+  justify-content: center;
+  
+  }
+
+  div.board-stand {
+    border: 1px solid rgb(65, 37, 37);
+    border-radius: 5%;
+    background-color: black;
+    vertical-align: middle;
+    align-items: center;
+    background: conic-gradient(#e6e9bf, #d2b5aa, #cbaea3, #d4b5ab,
+    #e6e9bf, #d2b5aa, #cbaea3, #d4b5ab,
+    #e6e9bf, #d2b5aa, #cbaea3, #d4b5ab,
+    #e6e9bf, #d2b5aa, #cbaea3, #d4b5ab);
+  }
 
 
 h2 {
@@ -66,7 +87,7 @@ h2 {
 }
 
 button {
-  background-color: red;
+  background-color: rgb(94, 255, 0);
   border-radius: 50px;
   font-size: 20px;
   font-weight: bolder;
