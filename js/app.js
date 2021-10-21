@@ -739,7 +739,7 @@ function winnerIsYou() {
     return boardState[2][5]
   }
 
-// winning combos from row 2 - row 5 in the backward slash direction \ \ \ \
+// winning combos across row 2 - row 5 in the backward slash direction \ \ \ \
   if(Math.abs(boardState[2][0] + boardState[3][1] + boardState[4][2] + boardState[5][3])=== 4){
     twoZero.style.borderColor = 'yellow'
     threeOne.style.borderColor = 'yellow'
@@ -779,14 +779,13 @@ return null
   } else {
     return 'T'
     }
-
-    
 }
 
 function handleHover(cir) {
   if (isWinner){
     return
   }
+  
   let sqIdx = cir.target.id.replace('sq', '')
     let rowIdx = parseInt(sqIdx[0])
     let colIdx = parseInt(sqIdx[1])
@@ -807,7 +806,6 @@ function handleHover(cir) {
         preview.style.backgroundColor = ''
       }
     })
-  
 }
 
 //initiated function upon starting the webpage

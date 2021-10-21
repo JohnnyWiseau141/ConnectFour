@@ -1,12 +1,37 @@
 body {
   background-image: linear-gradient(to right, rgb(162, 0, 255), rgb(0, 255, 179));
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+h1 {
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 25px;
+  background-color: rgb(214, 214, 13);
+  border: 5px solid black;
+  border-radius: 10px;
+  width: 300px;
+  height: 75px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-image: linear-gradient(rgb(223, 226, 62), rgb(160, 157, 7));
+}
+
+button {
+  background-color: rgb(94, 255, 0);
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: bolder;
+  height: 50px;
+  width: 100px;
 }
 
 section.board {
@@ -65,28 +90,5 @@ div.board-stand {
   #e6e9bf, #d2b5aa, #cbaea3, #d4b5ab,
   #e6e9bf, #d2b5aa, #cbaea3, #d4b5ab,
   #e6e9bf, #d2b5aa, #cbaea3, #d4b5ab);
-}
-
-h2 {
-  font-size: 35px;
-  background-color: rgb(214, 214, 13);
-  border: 5px solid black;
-  border-radius: 10px;
-  width: 300px;
-  height: 75px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background-image: linear-gradient(rgb(223, 226, 62), rgb(160, 157, 7));
-  
-}
-
-button {
-  background-color: rgb(94, 255, 0);
-  border-radius: 50px;
-  font-size: 20px;
-  font-weight: bolder;
-  height: 50px;
-  width: 100px;
 }
 

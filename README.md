@@ -18,7 +18,7 @@ Click [here](https://johnnywiseau141.github.io/ConnectFour/) to start the game. 
 
 
 
-![screenshots of final product game pending](images/incomplete-screenshot.png)
+![screenshots of final product game pending](images/styled-screenshot.png)
 
 ### Technologies Used:
 
@@ -29,4 +29,4 @@ Click [here](https://johnnywiseau141.github.io/ConnectFour/) to start the game. 
 
 ## Future changes
 
-- Make a shorter and less torturuous winnerIsYou function
+- Make a shorter and less tedious winnerIsYou function
