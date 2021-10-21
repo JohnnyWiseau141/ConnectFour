@@ -27,7 +27,7 @@ background-image: linear-gradient(to right, rgb(153, 147, 156), rgb(68, 68, 68))
 
 div.cells {
 border: 10px solid  black;
-border-radius: 50px;
+border-radius: 50%;
 font-size: 8vmin;
 text-align: center;
 vertical-align: middle;
@@ -44,7 +44,7 @@ section.preview-choice {
   
   div.preview {
     border: transparent;
-    border-radius: 50px;
+    border-radius: 50%;
     font-size: 8vmin;
     text-align: center;
     vertical-align: middle;
