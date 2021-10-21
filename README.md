@@ -18,7 +18,7 @@ Click [here](https://johnnywiseau141.github.io/ConnectFour/) to start the game. 
 
 
 
-[screenshots of final product game pending]
+![screenshots of final product game pending](https://64.media.tumblr.com/c1eec66ea124b8f3c52552812a01eda6/29804555adbe30ae-62/s2048x3072/103bffbc50c65a564f6e092c0fae9791b33e55bf.png)
 
 ### Technologies Used:
 
