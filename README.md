@@ -18,7 +18,10 @@ Click [here](https://connect-four-con-lt-dr.surge.sh/) to start the game. You ca
 
 
 
-![screenshots of final product game pending](images/styled-screenshot.png)
+![screenshots of blank board](images/styled-screenshot.png)
+![screenshots of blue winning](images/blue-winner.png)
+![screenshots of red winning](images/red-winner.png)
+![screenshots of tie wning](images/tie-condition.png)
 
 ### Technologies Used:
 
