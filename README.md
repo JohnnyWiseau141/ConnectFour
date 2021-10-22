@@ -32,7 +32,8 @@ Click [here](https://connect-four-con-lt-dr.surge.sh/) to start the game. You ca
 
 ## Future changes
 
-- Make a shorter and less tedious winnerIsYou function
+- Place the very large winnerIsYou function in separate js file until a shorter one is written
+- Write a shorter and less tedious winnerIsYou function
 - Experiment more with styling
 
 ## Original High-Level Psuedocode
