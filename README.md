@@ -1,9 +1,9 @@
 # ConnectFour
 
 
-In this repository you can play Connect four. Up to two people can play, the starting player being blue, and second player being red. 
+In this repository the game Connect Four can be played. Up to two people can play, the starting player being blue, and second player being red. 
 
-The goal of this game is to get four adjacent colors in any direction. Keep in mind the only position you can choose your circle to go in is a column. Once you choose a column, the circle will drop to the lowest unoccupied slot.
+The goal of this game is to get four adjacent colors in any direction (diagonal, row, or column). Keep in mind the only position you can choose your circle to go in is a column. Once you choose a column, the circle will drop to the lowest unoccupied slot.
 
 
 
@@ -11,16 +11,21 @@ The goal of this game is to get four adjacent colors in any direction. Keep in m
 
 Click [here](https://connect-four-con-lt-dr.surge.sh/) to start the game. You cannot choose or click occupied slots. You must click an empty slot to drop a circle into a column.
 
+## Images
 
+### Original wireframe
 
 
 ![wireframe](images/connect4wireframe.png)
 
 
-
+### On start of page:
 ![screenshots of blank board](images/styled-screenshot.png)
+### Blue winner:
 ![screenshots of blue winning](images/blue-winner.png)
+### Red winner:
 ![screenshots of red winning](images/red-winner.png)
+### Tie condition:
 ![screenshots of tie wning](images/tie-condition.png)
 
 ### Technologies Used:
@@ -35,6 +40,8 @@ Click [here](https://connect-four-con-lt-dr.surge.sh/) to start the game. You ca
 - Place the very large winnerIsYou function in separate js file until a shorter one is written
 - Write a shorter and less tedious winnerIsYou function
 - Experiment more with styling
+- Mobile friendly
+- Dark mode
 
 ## Original High-Level Psuedocode
 
