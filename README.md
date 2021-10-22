@@ -37,11 +37,12 @@ Click [here](https://connect-four-con-lt-dr.surge.sh/) to start the game. You ca
 
 ## Future changes
 
-- Place the very large winnerIsYou function in separate js file until a shorter one is written
+- Place the very large winnerIsYou function in separate js file
 - Write a shorter and less tedious winnerIsYou function
 - Experiment more with styling
 - Mobile friendly
 - Dark mode
+- Enable all winning combos to light up if there are two or more winning combos on the board
 
 ## Original High-Level Psuedocode
 
